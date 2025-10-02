@@ -41,18 +41,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    # 1. Session must be here, usually near the top
+    'django.middleware.security.SecurityMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware', 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    # 2. Authentication must follow Session
     'django.contrib.auth.middleware.AuthenticationMiddleware', 
-    # 3. Message must be here
     'django.contrib.messages.middleware.MessageMiddleware', 
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # You also need WhiteNoise middleware if you are serving static files
-    # 'whitenoise.middleware.WhiteNoiseMiddleware', 
 ]
 
 ROOT_URLCONF = 'revolution_project.urls'
