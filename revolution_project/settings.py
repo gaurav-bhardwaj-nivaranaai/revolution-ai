@@ -123,19 +123,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# settings.py
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Add WhiteNoise middleware for static files serving in production
-MIDDLEWARE = [
-    # ... other middleware
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-    # ... other middleware
-]
-# Enable gzip compression for static files (optional, but good)
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
